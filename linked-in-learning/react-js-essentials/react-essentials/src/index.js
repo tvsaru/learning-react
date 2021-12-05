@@ -2,13 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
 ReactDOM.render(
-  <ul>
-    <li>Apple</li>
-    <li>Orange</li>
-    <li>Pineapple</li>
-  </ul>,
+  <App />,
   document.getElementById('root')
 );
 
