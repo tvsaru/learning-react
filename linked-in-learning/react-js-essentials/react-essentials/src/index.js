@@ -4,10 +4,11 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  React.createElement(
-    "h1",
-    { style: { color: "blue" } },
-    "Hiya"),
+  <ul>
+    <li>Apple</li>
+    <li>Orange</li>
+    <li>Pineapple</li>
+  </ul>,
   document.getElementById('root')
 );
 
