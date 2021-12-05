@@ -1,25 +1,41 @@
 import './App.css';
 
-function Header() {
+function Header(props) {
   return (
     <header>
-      <h1>Saru's கையேந்தி பவன் 🤤</h1>
+      <h1>{props.name}'s கையேந்தி பவன் 🤤</h1>
     </header>
   )
 }
 
-function Main() {
+const stuff = [
+  "Idli",
+  "Dosa",
+  "Vada"
+];
+
+const stuffObjects = stuff.map(
+  (dishName, i) => ({ id: i, title: dishName }));
+
+function Main({ dishes }) {
   return (
     <section>
-      <p> Deliciious street food on the road 🤤</p>
+      <p> Delicious street food on the road 🤤</p>
+      <img src="https://github.com/tvsaru.png" height={200}
+        alt="Saru's github profile" />
+      <ul style={{ textAlign: "left" }}>
+        {dishes.map((dish) => (
+          <li key={dish.id}>{dish.title}</li>
+        ))}
+      </ul>
     </section>
   );
 }
 
-function Footer() {
+function Footer({ year }) {
   return (
     <footer>
-      <p>மெய்யாலுமே!</p>
+      <p>Copyright {year}</p>
     </footer>
   )
 }
@@ -27,9 +43,9 @@ function Footer() {
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <Header name="Saru" />
+      <Main dishes={stuffObjects} />
+      <Footer year={new Date().getFullYear()} />
     </div>
   );
 }
